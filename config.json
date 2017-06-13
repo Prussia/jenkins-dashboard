@@ -1,0 +1,8 @@
+{
+    "port": 3333,
+    "host": {
+        "url": "strl099047", 
+        "port": 8080, 
+        "secure": false 
+    }
+}
