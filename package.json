@@ -1,0 +1,38 @@
+{
+  "name": "jenkins-dashboard",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node_modules/.bin/grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clarkie/jenkins-dashboard.git"
+  },
+  "keywords": [
+    "jenkins",
+    "dashboard"
+  ],
+  "author": "clarkie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clarkie/jenkins-dashboard/issues"
+  },
+  "dependencies": {
+    "blessed": "^0.1.56",
+    "blessed-contrib": "^2.0.5",
+    "jenkins": "^0.10.1",
+    "lodash": "^3.8.0",
+    "moment": "^2.10.2"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-eslint": "^13.0.0",
+    "grunt-mocha-test": "^0.12.7",
+    "time-grunt": "^1.2.0"
+  }
+}
