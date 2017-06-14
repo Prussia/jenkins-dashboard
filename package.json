@@ -1,25 +1,25 @@
 {
-    "name": "jenkins-dash",
-    "version": "0.0.1",
-    "bin": {
-        "jenkins-dash": "./src/app.js"
-    },
-    "scripts": {
-        "start": "node app.js",
-        "dev": "nodemon app.js",
-        "stop": "killall app.js"
-    },
-    "dependencies": {
-        "express": "*",
-        "request": "*",
-        "extend": "*",
-        "nodemon": "^1.10.0"
-    },
-    "devDependencies": {
-        "gulp": "*",
-        "gulp-uglify": "*",
-        "gulp-jade": "*",
-        "gulp-less": "*",
-        "gulp-uglify": "*"
-    }
+  "name": "jenkins-dash",
+  "version": "0.0.1",
+  "bin": {
+    "jenkins-dash": "./src/app.js"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "stop": "killall app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "extend": "*",
+    "json-stringify-pretty-compact": "^1.0.4",
+    "nodemon": "^1.10.0",
+    "request": "*"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-uglify": "*",
+    "gulp-jade": "*",
+    "gulp-less": "*"
+  }
 }

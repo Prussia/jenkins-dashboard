@@ -3,6 +3,7 @@ var router = express.Router();
 var request = require("request");
 var config  = require("../config.json");
 var path = require('path');
+var stringify = require("json-stringify-pretty-compact")
 var publicPath  = config.staticFolder;
 
 // Render the static HTML file. This file is generated from a jade template
@@ -63,10 +64,14 @@ function requestJob(req, res,jobName){
     // Read the body content and wait until all Jenkins requests have been completed.
     var read = function (err, response, body) {
         body = JSON.parse(body);
-        //console.log("body = " + body);
+        
         body.host = response.request.uri.hostname;
-        //console.log(JSON.stringify(body));    
-        res.send(JSON.stringify(body));   
+            
+        var out = stringify(body);
+            
+        console.warn("send response json = " + out);
+
+        res.send(out);
     };
     
     var jenkins = config.host;
