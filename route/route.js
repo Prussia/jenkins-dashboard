@@ -44,43 +44,36 @@ router.get('/data', function (req, res) {
 });
 
 // API to get data from jenkis
-router.get('/data/job', function (req, res) {
-
-    var jobName = req.param('job');
-    if(jobName !=== null && jobName !=== undefined){
-        console.log("job Name =" + jobName);
-    }else{
-        console.log("no job name for job api");
-    }
+router.get('/data/job/Seed-Back', function (req, res) {
+    var jobName = "Seed-Back";
+    // if(jobName !== null && jobName !== undefined){
+    //     console.log("job Name =" + jobName);
+    // }else{
+    //     console.log("no job name for job api");
+    // }
     
+    requestJob(req, res,jobName);
+    
+});
+
+function requestJob(req, res,jobName){
     var query = "depth=1&tree=displayName,url,color,lastBuild[fullDisplayName,number,url,timestamp,duration,culprits[property[address],fullName],actions[failCount,skipCount,totalCount]]";
     var content = { jobs: [] };
 
     // Read the body content and wait until all Jenkins requests have been completed.
     var read = function (err, response, body) {
         body = JSON.parse(body);
-
-        for (var key in body) {
-            var job = body[key];
-            job.host = response.request.uri.hostname;
-        }
-
-        content.jobs.push.apply(content.jobs, body);
-
-        // Only send the content once all requests have been read
-        
-        res.send(JSON.stringify(content));
-        
+        //console.log("body = " + body);
+        body.host = response.request.uri.hostname;
+        //console.log(JSON.stringify(body));    
+        res.send(JSON.stringify(body));   
     };
-
     
     var jenkins = config.host;
     var protocol = jenkins.secure ? 'https' : 'http';
 
-
-    request(protocol + "://" + jenkins.url + ":" + jenkins.port + "/" + jobName +  "/" +  "/api/json?" + query, read);
-    
-});
+    request(protocol + "://" + jenkins.url + ":" + jenkins.port + "/job/" + jobName +  "/api/json?" + query, read);
+}
 
 
 module.exports = router;
