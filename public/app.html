@@ -1,0 +1,93 @@
+<!doctype html>
+<html ng-app="dashboardApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>CI-Dashboard</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="description" content="Baseline">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <base href="/">
+    <script type="text/javascript">
+        // When we enable the Loader balance web server on
+        // We use context from "pathname" of window.location to determine ENV.
+        // There are 3 environments: care-dev, care-demo, care
+        // let siteId = 46; // default one is for dev, this ID is created by Piwik.
+       /* const sitesMap = {"appkit-dev": 46, "appkit": 45};
+        const path = window.location.pathname.substr(1); // pathname: "/care-dev/app.html"; /CARE/app.html
+        const ctx = path.substring(0, path.indexOf("/"));
+        let siteId = sitesMap[ctx];
+        const host = window.location.host;
+
+        if (!siteId || siteId === 0 || host === "localhost") {
+            siteId = 46; // -1; // As local if not find any useful site.
+        }
+
+        let _paq = [];
+        _paq = []; // to fix error by eslint, its value will be resigned later
+        // _paq.push(['trackPageView']);
+        // _paq.push(['appendToTrackingUrl', 'new_visit=0']);
+        // _paq.push(['enableLinkTracking']);
+
+        (function () {
+                //let user = sessionStorage.getItem("loggedInUser");
+                //user = angular.fromJson(user);
+
+                //if (!user) {
+                //    console.log("No user signed in, ignore piwik tracking.");
+                //    return;
+                //}
+
+            // var u="https://strw099027.mso.net/piwik-app/";
+            let u = "https://analyticapps.global.hosting.pwc.com/piwik/";
+
+            // only on load balance server will enable the short context url.
+            if (host === "analyticapps.global.hosting.pwc.com") {
+                u = "/piwik/";
+            }
+
+            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+            _paq.push(['setSiteId', siteId]);
+
+            const d = document;
+            const g = d.createElement('script');
+            const s = d.getElementsByTagName('script')[0];
+
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'piwik.js';
+            s.parentNode.insertBefore(g, s);
+
+            const noscript = d.getElementsByTagName('noscript')[0];
+
+            if (noscript) {
+                noscript.childNodes[0] = `<p><img src="${u}/piwik.php?idsite=${siteId}" style="border:0;" alt="" /></p>`;
+            }
+        })();*/
+</script>
+
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/app.css">
+
+    <link rel="stylesheet" type="text/css" href="https://pziuspus2pstag028.blob.core.windows.net/appkitcdn/appkit/2.2.1/appkit.min.css">
+</head>
+
+<body ng-controller="AppController as appCtrl" ng-init="appCtrl.init()">
+    <div ui-view class="ui-view-holder overflow-hidden container"></div>
+    <div class="loading-modal" ng-show="showLoading">
+        <div class="global-loader-div">
+            <div class="loading-title">Loading...</div>
+            <div class="global-loader"></div>
+            <div class="loading-end">Please wait!</div>
+        </div>
+    </div>
+    
+</body>
+<script src="scripts/vendor.js"></script>
+<script src="scripts/app.js"></script>
+<script type="text/javascript" src="https://pziuspus2pstag028.blob.core.windows.net/appkitcdn/appkit/2.2.1/appkit.min.js"></script>
+</html>

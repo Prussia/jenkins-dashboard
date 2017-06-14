@@ -1,4 +1,4 @@
-var gulp    = require("gulp");
+/*var gulp    = require("gulp");
 var jade    = require("gulp-jade");
 var less    = require("gulp-less");
 var uglify  = require("gulp-uglify");
@@ -24,4 +24,4 @@ gulp.task("build", function () {
 gulp.task("default", function () {
     gulp.start("build");
     gulp.watch("./asset/*", ["build"]);
-});
+});*/
