@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
     head
         meta(name="viewport", content="initial-scale=1")
-        title Jenkins Dashboard
+        title CI Dashboard(Jenkins)
 
         link(href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css", rel="stylesheet", type="text/css")
         link(href="http://fonts.googleapis.com/css?family=Roboto", rel="stylesheet", type="text/css")
@@ -15,7 +15,7 @@ html(lang="en")
                     span.loading(data-bind='css: {visible: app.loading }')
                         i.glyphicon.glyphicon-refresh
 
-                    h2 Jenkins Jobs
+                    h2 Analytics App - CI dashboard
 
                     div.row
                         div.job-cont(data-bind="foreach: app.jobs")
